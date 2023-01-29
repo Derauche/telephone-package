@@ -1,4 +1,4 @@
-class Phonebook {
+class Telephone {
     constructor() {
         this.numbers = {};
         this.observers = [];
@@ -12,7 +12,6 @@ class Phonebook {
         this.notify(`Removed number for ${name}`);
     }
     dialPhoneNumber(name) {
-        // console.log(this.numbers[name])
         if (this.numbers[name]) {
             this.notify(`Dialing ${this.numbers[name]}`)
         } else {
@@ -36,9 +35,9 @@ class Observer {
     }
 }
 
-const phonebook = new Phonebook();
+const telephone = new Telephone();
 const observer = new Observer();
-phonebook.subscribe(observer);
-phonebook.addPhoneNumber("John Doe", "123-456-7890");
-phonebook.dialPhoneNumber('John Doe')
-phonebook.removePhoneNumber("John Doe");
+telephone.subscribe(observer);
+telephone.addPhoneNumber("John Doe", "123-456-7890");
+telephone.dialPhoneNumber('John Doe')
+telephone.removePhoneNumber("John Doe");
